@@ -6,6 +6,9 @@ module.exports = {
     name: "event",
     description: `Nhận code sự kiện`,
     async execute(message) {
+        if(message.guild.id != 937637786054459403) return message.reply(
+            `Server này không được phép gọi lệnh này`
+        );
         const responseActives = await axios.get('http://trieuvy.online/list_code.php');
         
         try {

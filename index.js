@@ -39,11 +39,13 @@ for (const file of commandFiles) {
 }
 
 client.on("message", async (message) => {
+  
   if (message.author.bot) return;
   if (!message.guild) return;
 
   const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(PREFIX)})\\s*`);
   if (!prefixRegex.test(message.content)) return;
+  
 
   const [, matchedPrefix] = message.content.match(prefixRegex);
 
